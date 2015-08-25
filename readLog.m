@@ -15,16 +15,7 @@ line7 = fgetl(fid);
 fclose(fid);
 
 % Determine Daysimeter Status
-switch line1
-    case '0'
-        status = 'stand by';
-    case '2'
-        status = 'start new log';
-    case '4'
-        status = 'continue log';
-    otherwise
-        status = 'status code not recognized';
-end
+status = line1;
 
 % Determine Daysimeter ID
 sn = str2double(line2);

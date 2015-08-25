@@ -10,3 +10,5 @@ dataPath = 'test-DATA.txt';
 [uncalibrated,nResets,nUnwritten,nReadings] = readData(dataPath);
 
 resetInventory = searchFiles({dataPath},{logPath});
+
+display(resetInventory);
