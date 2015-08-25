@@ -1,4 +1,4 @@
-function [status,id,startTime,logInt,downloaded,battery_mV] = readLog(filePath)
+function [status,sn,start_datenum,interval_sec,downloaded,battery_mV] = readLog(filePath)
 %READLOG Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -27,13 +27,13 @@ switch line1
 end
 
 % Determine Daysimeter ID
-id = str2double(line2);
+sn = str2double(line2);
 
 % Determine Start Date/Time
-startTime = datenum(line3,'mm-dd-yy HH:MM');
+start_datenum = datenum(line3,'mm-dd-yy HH:MM');
 
 % Determine Logging Interval
-logInt = str2double(line4); % in seconds
+interval_sec = str2double(line4); % in seconds
 
 % Determine Download Flag
 downloaded = strcmp(line6,'0'); % True if download occured
