@@ -18,11 +18,7 @@ battery_mV      = zeros(nSet,1);
 
 skipped         = false(nSet,1);
 
-% Open the pool
-gcp;
-
-% Dive on in
-parfor iSet = 1:nSet
+for iSet = 1:nSet
     thisData = dataPathArray{iSet};
     thisLog  = logPathArray{iSet};
     
